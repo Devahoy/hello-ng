@@ -4,8 +4,24 @@
 	<meta charset="UTF-8">
 	<title>Hello AngularJS</title>
 </head>
-<body>
+<body ng-app="myApp">
+
+	<div ng-controller="MainController">
+		{{ message }}
+
+		<input type="text" ng-model="name">
+		<h3>Hello : {{ name }}</h3>
+
+		<h3>List of Pirates</h3>
+		<ul>
+			<li ng-repeat="pirate in pirates">
+				<p>Name : {{ pirate.name }}</p>
+				<p>Position : {{ pirate.position }}</p>
+			</li>
+		</ul>
+	</div>
 	
 	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
